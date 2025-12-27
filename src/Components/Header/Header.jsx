@@ -1,32 +1,68 @@
-import React from 'react'
-import logo from '/src/assets/logo.png'
-import {FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaChevronDown, FaChevronRight } from "react-icons/fa";
 
-function Header() {
+export default function Header() {
   return (
-    <>
-      <div className="bg-[#0C4A6E] h-[70px] flex items-center px-3">
-        {/* Logo */}
-        <img
-          className="h-[65px] w-auto"
-          src={logo}
-          alt="logo"
-        />
+    <header className="w-full h-20 bg-white border-b flex items-center justify-between px-8">
 
-        {/* Title */}
-        <h4 className="text-white text-2xl flex-grow">
-          Service Request Management
-        </h4>
-
-        {/* Profile Icon */}
+      {/* Left Section */}
+      <div className="flex items-center gap-10">
+        {/* Logo and Name */}
         <div className="flex items-center gap-2">
-          <FaUserCircle size={32} className="text-white" />
-          <h5 className="text-white text-lg">Aryan</h5>
+          <div className="w-9 h-9 bg-gradient-to-tr from-blue-600 to-teal-600 rounded-lg flex items-center justify-center text-white font-bold">
+            SR
+          </div>
+          <div>
+            <h1 className="text-sm font-semibold text-gray-800">SRMS</h1>
+            <p className="text-xs text-gray-500">Service Request</p>
+          </div>
         </div>
+
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold text-gray-800">
+            Dashboard
+          </span>
+          {/* path */}
+          <span className=" flex items-center text-xs text-gray-500 cursor-pointer">
+            Dashboard
+            <FaChevronRight className="mx-1 text-[10px]" /> login
+          </span>
+        </div>
+        {/* Dashboard Text */}
+
       </div>
 
-    </>
-  )
-}
+      {/* Right Section */}
+      <div className="flex items-center gap-6">
 
-export default Header
+        {/* User Name */}
+        <div className="text-right">
+          <p className="text-sm font-medium text-gray-800">
+            Amit Sharma
+          </p>
+          <span className="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">
+            User
+          </span>
+        </div>
+
+        {/* Profile Icon */}
+        <div className="relative group cursor-pointer">
+          <div className="flex items-center gap-2">
+            <FaUserCircle className="text-3xl text-blue-600" />
+            <FaChevronDown className="text-gray-500 text-sm" />
+          </div>
+
+          {/* Dropdown */}
+          <div className="absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg hidden group-hover:block">
+            <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+              Profile
+            </button>
+            <button className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-gray-100">
+              Logout
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </header>
+  );
+}

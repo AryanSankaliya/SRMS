@@ -10,9 +10,9 @@ function Requestlist() {
   ]
   return (
     <div className='grid content-center'>
-      <h3>request</h3>
+      <h3 className='text-2xl text-center m-3'>Request</h3>
 
-      <table className='border border-gray-300 border-collapse rounded-lg shadow-md text-center p-4'>
+      <table className='border border-gray-300 border-collapse rounded-lg m-3 shadow-md text-center p-4'>
         <thead>
           <tr>
             <th className='border px-3 py-2'>Request No.</th>

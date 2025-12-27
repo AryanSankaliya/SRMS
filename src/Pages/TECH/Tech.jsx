@@ -1,8 +1,17 @@
 import React from 'react'
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import Requestlist from '../../Components/Request List/Requestlist'
 
 function Tech() {
   return (
-    <h3>This is tech Page</h3>
+    <>
+      <Header />
+
+      <Requestlist/>
+      <Footer />
+    </>
+
   )
 }
 

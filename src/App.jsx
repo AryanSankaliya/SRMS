@@ -8,21 +8,22 @@ import User from './/Pages/USER/User'
 import Tech from './/Pages/TECH/Tech'
 import Hod from './/Pages/HOD/Hod'
 import Login from './Pages/Login/Login'
+import Footer from './Components/Footer/Footer'
+import Forgot_Password from './Pages/Forgot_password/Forgot_password'
 
 
 function App() {
 
   return (
-  //  <BrowserRouter>
-  //   <Header/>
-  //   <Routes>
-  //     <Route path="/" element={<User />} />
-  //     <Route path="/hod" element={<Hod />} />
-  //     <Route path="/tech" element={<Tech />} />
-  //   </Routes>
-  //  </BrowserRouter>
-
-  <Login/>
+   <BrowserRouter>
+    <Routes>
+      <Route path="/user" element={<User />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/hod" element={<Hod />} />
+      <Route path="/tech" element={<Tech />} />
+      <Route path="/forgot-password" element={<Forgot_Password />} />
+    </Routes>
+   </BrowserRouter> 
   )
 }
 

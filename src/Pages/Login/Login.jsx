@@ -2,11 +2,13 @@ import React from 'react'
 import logo from '../../assets/Login page logo.png'
 import Illustration from '../../assets/Illustration.png'
 import { FaEnvelope, FaLock, FaUserCircle } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
+  const navigate = useNavigate()
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#F2F8FF] to-[#FFFFFF] flex w-full">
+    <div className="min-h-screen bg-gradient-to-tr from-[#F2F8FF] to-[#FFFFFF] flex w-full">
 
       {/* Left Section */}
       <div className="w-1/2 min-h-screen  flex flex-col items-center justify-between py-20">
@@ -59,16 +61,16 @@ function Login() {
             <p className="mb-2 text-gray-700">Select Your Role</p>
             <div className="flex gap-4">
               <button type="button"
-                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700  hover:bg-green-100 hover:border-green-400  hover:text-green-700 transition-colors duration-500 ">
+                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700  hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500 ">
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Admin</span>
               </button>
               <button type="button"
-                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-700 transition-colors duration-500">
+                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500">
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Student</span>
               </button>
-              <button type="button" className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-700 transition-colors duration-500">
+              <button type="button" className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500">
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Technician</span>
               </button>
@@ -85,7 +87,7 @@ function Login() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full border rounded-lg py-2 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-green-400 box-border"
+                className="w-full border rounded-lg py-2 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-blue-400 box-border"
               />
             </div>
 
@@ -98,7 +100,7 @@ function Login() {
               <input
                 type="password"
                 placeholder="Enter your password"
-                className="w-full border rounded-lg py-2 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-green-400 box-border"
+                className="w-full border rounded-lg py-2 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-blue-400 box-border"
               />
             </div>
           </div>
@@ -108,16 +110,16 @@ function Login() {
               <input type="checkbox" />
               Remember me
             </label>
-            <a href="#" className="text-blue-500 text-sm hover:underline">
+            <a href="#" className="text-blue-500 text-sm hover:underline" onClick={()=>navigate("/forgot-password")}>
               Forgot Password?
             </a>
           </div>
 
-          <button className="w-full bg-gradient-to-r from-green-300 to-blue-500 text-white py-2 rounded-lg hover:opacity-90 transition">
+          <button className="w-full bg-gradient-to-tr from-blue-400 to-teal-500 text-white py-2 rounded-lg hover:opacity-90 transition">
             Sign In
           </button>
 
-          <p className="text-center text-gray-400 text-sm">© 2025 College Name. All rights reserved.</p>
+          <p className="text-center text-gray-400 text-sm">© 2025 Service Request Management System. All rights reserved.</p>
         </form>
       </div>
 
