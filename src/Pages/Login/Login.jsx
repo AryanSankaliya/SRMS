@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/Login page logo.png'
 import Illustration from '../../assets/Illustration.png'
 import { FaEnvelope, FaLock, FaUserCircle } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate()
+  const [activeRole, setActiveRole] = useState("Admin")
   return (
     <div className="min-h-screen bg-gradient-to-tr from-[#F2F8FF] to-[#FFFFFF] flex w-full">
 
@@ -61,16 +62,32 @@ function Login() {
             <p className="mb-2 text-gray-700">Select Your Role</p>
             <div className="flex gap-4">
               <button type="button"
-                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700  hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500 ">
+                onClick={() => setActiveRole("Admin")}
+                className={`flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 transition-All duration-300 cursor-pointer 
+                ${activeRole === "Admin"
+                    ? "bg-green-100 border-green-500 text-green-950 shadow-md"
+                    : "border-gray-300 text-gray-700 hover:bg-green-100 hover:border-green-400 hover:text-green-950"
+                  }`}>
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Admin</span>
               </button>
               <button type="button"
-                className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500">
+                onClick={() => setActiveRole("Student")}
+                className={`flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 transition-All duration-300 cursor-pointer 
+                ${activeRole === "Student"
+                    ? "bg-green-100 border-green-500 text-green-950 shadow-md"
+                    : "border-gray-300 text-gray-700 hover:bg-green-100 hover:border-green-400 hover:text-green-950"
+                  }`}>
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Student</span>
               </button>
-              <button type="button" className="flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 hover:bg-green-100 hover:border-green-400  hover:text-green-950 transition-colors duration-500">
+              <button type="button"
+                onClick={() => setActiveRole("Technician")}
+                className={`flex-1 border rounded-lg py-2 px-4 flex flex-col items-center justify-center gap-2 text-gray-700 transition-All duration-300 cursor-pointer 
+                ${activeRole === "Technician"
+                    ? "bg-green-100 border-green-500 text-green-950 shadow-md"
+                    : "border-gray-300 text-gray-700 hover:bg-green-100 hover:border-green-400 hover:text-green-950"
+                  }`}> 
                 <FaUserCircle className='text-4xl' />
                 <span className="material-icons">Technician</span>
               </button>
@@ -110,7 +127,7 @@ function Login() {
               <input type="checkbox" />
               Remember me
             </label>
-            <a href="#" className="text-blue-500 text-sm hover:underline" onClick={()=>navigate("/forgot-password")}>
+            <a href="#" className="text-blue-500 text-sm hover:underline" onClick={() => navigate("/forgot-password")}>
               Forgot Password?
             </a>
           </div>
