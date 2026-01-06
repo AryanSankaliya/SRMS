@@ -23,8 +23,7 @@ function Requestlist() {
             status: "Open",
             statusBg: "bg-green-100",
             statusText: "text-green-600",
-            date: "Oct 24, 2023",
-            final_status: "Open"
+            date: "Oct 24, 2023"
         },
         {
             id: "#REQ-1025",
@@ -35,10 +34,7 @@ function Requestlist() {
             status: "Pending",
             statusBg: "bg-yellow-100",
             statusText: "text-yellow-600",
-            date: "Oct 22, 2023",
-            final_status: "Close",
-
-
+            date: "Oct 22, 2023"
         },
         {
             id: "#REQ-1020",
@@ -49,8 +45,7 @@ function Requestlist() {
             status: "Open",
             statusBg: "bg-green-100",
             statusText: "text-green-600",
-            date: "Oct 18, 2023",
-            final_status: "Close"
+            date: "Oct 18, 2023"
         }
 
     ]
@@ -106,12 +101,6 @@ function Requestlist() {
                         />
                     </div>
                 </div>
-
-                {/* Apply Button */}
-                <button className='flex items-center gap-2 bg-[#8ecae6] hover:bg-[#219ebc] text-black font-medium px-6 py-2 rounded-full transition'>
-                    <FaFilter />
-                    Apply Filters
-                </button>
             </div>
 
             <StatusTable

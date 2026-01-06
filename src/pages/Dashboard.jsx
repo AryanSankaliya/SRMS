@@ -11,11 +11,9 @@ import {
 import Requestlist from "../components/Requestlist";
 
 export default function Dashboard() {
-  // 🔐 TEMP role (later auth se aayega)
-  const role = "admin";
+  
+  const role = "tech";
   // "user" | "tech" | "admin"
-
-  // 🔧 ROLE CONFIG
   const dashboardConfig = {
     user: {
       stats: ["pending", "closed"],

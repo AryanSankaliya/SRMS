@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function MainLayout() {
     const location = useLocation();
 
-    
+
     const headerConfig = {
         "/": {
             title: "Dashboard",
@@ -36,7 +36,7 @@ export default function MainLayout() {
             breadcrumb: ["Dashboard"]
         };
 
-    
+
     const user = JSON.parse(localStorage.getItem("user"));
 
     const userName = user?.userName || "User";
@@ -44,7 +44,7 @@ export default function MainLayout() {
 
     return (
         <div className="flex min-h-screen bg-gray-100">
-            <Sidebar />
+            <Sidebar role={"user"} />
 
             <div className="flex flex-col flex-1">
                 <Header
